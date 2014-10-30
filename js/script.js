@@ -15,15 +15,16 @@ L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png', {
 	maxZoom: 16
 }).addTo(map);
 
+
 // add a marker in the given location, attach some popup content to it and open the popup
 L.marker([40.724444,-73.943358], {icon: myIcon}).addTo(map)
-    .bindPopup('Where Seymour plays soccer in the mornings');
+    .bindPopup('<p>Early AM <br />soccer</p>');
 
 L.marker([40.6699957,-73.9702993], {icon: myIcon}).addTo(map)
-	.bindPopup('Saturday morning Frenchie Meetups');
+	.bindPopup('<p>Frenchie Meetups<br />Prospect Park </p>');
 
 L.marker([40.56321,-73.883314], {icon: myIcon}).addTo(map)
-	.bindPopup('Favorite beach');
+	.bindPopup('<p>Fort Tilden beach</p>');
 
 L.marker([40.720042,-73.952907], {icon: myIcon}).addTo(map)
-	.bindPopup('Farmers market');
+	.bindPopup('<p>Farmers market</p>');
