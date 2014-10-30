@@ -1,0 +1,15 @@
+body {
+	font-family: sans-serif;
+	text-align: center;
+}
+
+header {
+	text-align: center;
+	background-size: cover;
+}
+
+h1 {
+	text-align: center;
+}
+
+#map { height: 500px; }
