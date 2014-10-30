@@ -21,7 +21,7 @@ L.marker([40.724444,-73.943358], {icon: myIcon}).addTo(map)
     .bindPopup('<p>Early AM <br />soccer</p>');
 
 L.marker([40.6699957,-73.9702993], {icon: myIcon}).addTo(map)
-	.bindPopup('<p>Frenchie Meetups<br />Prospect Park </p>');
+	.bindPopup('<p>Frenchie Meetups<br />Prospect Park</p>');
 
 L.marker([40.56321,-73.883314], {icon: myIcon}).addTo(map)
 	.bindPopup('<p>Fort Tilden beach</p>');
