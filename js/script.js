@@ -26,24 +26,24 @@ L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png', {
 
 var bday = L.marker([41.077333,-73.501891], {icon: myIcon, title: 'bday', alt: 'where Seymour was born and his littermates still live'}).addTo(map).on('click',onClick);
 
-var mkt = L.marker([40.720042,-73.952907], {icon: myIcon, title: 'mkt'}).addTo(map).on('click',onClick);
+var mkt = L.marker([40.720042,-73.952907], {icon: myIcon, title: 'mkt', alt: 'a place full of yummy food smells'}).addTo(map).on('click',onClick);
 
-var soccer = L.marker([40.724444,-73.943358], {icon: myIcon, title: 'soccer'}).addTo(map).on('click',onClick);
+var soccer = L.marker([40.724444,-73.943358], {icon: myIcon, title: 'soccer', alt: 'nice grass fields for chasing the ball'}).addTo(map).on('click',onClick);
 
-var beach = L.marker([40.56321,-73.883314], {icon: myIcon}).addTo(map);
+var beach = L.marker([40.56321,-73.883314], {icon: myIcon, title: 'beach', alt: 'fun with seagulls and waves'}).addTo(map).on('click',onClick);
 
-var meetup = L.marker([40.6699957,-73.9702993], {icon: myIcon}).addTo(map);
+var meetup = L.marker([40.6699957,-73.9702993], {icon: myIcon, title: 'meetup', alt: 'where seymour plays with his fellow frenchies'}).addTo(map).on('click',onClick);
 
-var camping = L.marker([40.200983,-74.300908], {icon: myIcon}).addTo(map);
+var camping = L.marker([40.200983,-74.300908], {icon: myIcon, title: 'camping', alt: 'this is where seymour went camping for the first time'}).addTo(map).on('click',onClick);
 
-var fort = L.marker([40.794196,-73.77565], {icon: myIcon}).addTo(map);
+var fort = L.marker([40.794196,-73.77565], {icon: myIcon, title: 'fort', alt: 'dog-friendly field station where jackie brings seymour to work'}).addTo(map).on('click',onClick);
 
-var licH2o = L.marker([40.7430715,-73.9600146], {icon: myIcon}).addTo(map);
+var licH2o = L.marker([40.7430715,-73.9600146], {icon: myIcon, title: 'licH2o', alt: 'a dog run with a view of Manhattan!'}).addTo(map).on('click',onClick);
 
 
 //defines what happens on marker clicks
 function onClick(e) {
-	// console.log(this.options.title);  //return the title of the marker when it is clicked on 
+	console.log(this.options.title);  //return the title of the marker when it is clicked on 
 	var isHeThere = Math.floor((Math.random() * 100) + 1);  //random number pull
 	console.log(isHeThere);
 	if (isHeThere < 75) {

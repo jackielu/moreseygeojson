@@ -3,7 +3,7 @@ body, html {
 	margin: 0;
 	height: 100%;
 	font-family: sans-serif;
-	text-align: center;
+	text-align: left;
 }
 
 header {
@@ -11,8 +11,11 @@ header {
 	width: 100%;
 }
 
-h1 {
-	right: 10%;
+
+#sideBar {
+	width: 20%;
+	float: right;
+	right: 5%;
 	margin: 10px;
 	padding: 5px;
 	border: 5px;
@@ -20,37 +23,47 @@ h1 {
 	border-radius: 5px;
 	position: fixed;
 	opacity: .75;
+	z-index: 1;
+}
+
+
+h1 {
+	margin: 10px;
+	padding: 5px;
+	border: 5px;
+	background: whitesmoke;
+	border-radius: 5px;
 	z-index: 1;
 }
 
 p {
-	top: 20%;
-	right: 25%;
 	margin: 10px;
 	padding: 5px;
 	border: 5px;
 	background: whitesmoke;
 	border-radius: 5px;
-	position: fixed;
-	opacity: .75;
-	z-index: 1;
 }
 
-ul {
+
+#listOfPlaces {
     float: left;
-    width:25%;
     padding: 0px;
-    margin:2px;
+    margin:10px;
     list-style-type: none;
- 	position: fixed; 
     z-index: 1;
-    top: 20%;
-	right: 8%;
 	box-sizing: border-box;
 }
 
+ul {
+    padding: 10px;
+    margin:25px;
+    list-style-type: none;
+    z-index: 1;
+}
+
+
 li {
-	margin: 5px;
+	margin: 2px;
 	padding: 5px;
 	border: 5px;
 	border-radius: 5px;
@@ -59,19 +72,24 @@ li {
 }
  
 .leaflet-popup-content {
-	margin: 0px 0px ! important;
+	margin: 10px 10px ! important;
 	line-height: 1.4;
-	background: whitesmoke;
+	background: transparent;
 	opacity: 0.75;
-	}
+	font-size: 14px;
+	max-width: 125px;
+}
 
 .leaflet-popup-tip {
-	opacity: 0.5;
+	opacity: 0.9;
 }
 
 .leaflet-popup-content-wrapper {
 	padding: 1px ! important;
 	border-radius: 0px ! important;
+	text-align: center ! important;
+	opacity: 0.9;
+	background: whitesmoke;
 }
 
 .place {
@@ -96,8 +114,4 @@ li {
 	z-index: 0
 }
 
-#sideBar {
-	width: 20%;
-	float: right;
-}
 
