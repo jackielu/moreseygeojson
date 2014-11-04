@@ -25,49 +25,49 @@ L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png', {
 
 //define the location markers, along with a title, and a function called onClick that runs when you click on the marker
 
-var bday = L.marker([41.077333,-73.501891], {icon: myIcon, title: 'bday', alt: 'where Seymour was born and his littermates still live', pic: '/images/littermates.jpg'})
+var bday = L.marker([41.077333,-73.501891], {icon: myIcon, title: 'bday', alt: 'where Seymour was born and his littermates still live', pic: '../images/littermates.jpg'})
 	.addTo(map)
 	.on('click',onClick)
 	.on('mouseover',onMouseOver)
 	.on('mouseout',onMouseOut);
 
-var mkt = L.marker([40.720042,-73.952907], {icon: myIcon, title: 'mkt', alt: 'a place full of yummy food smells', pic: '/images/cobble.jpg'})
+var mkt = L.marker([40.720042,-73.952907], {icon: myIcon, title: 'mkt', alt: 'a place full of yummy food smells', pic: '../images/cobble.jpg'})
 	.addTo(map)
 	.on('click',onClick)
 	.on('mouseover',onMouseOver)
 	.on('mouseout',onMouseOut);
 
-var soccer = L.marker([40.724444,-73.943358], {icon: myIcon, title: 'soccer', alt: 'nice grass fields for chasing the ball', pic: '/images/soccer.jpg'})
+var soccer = L.marker([40.724444,-73.943358], {icon: myIcon, title: 'soccer', alt: 'nice grass fields for chasing the ball', pic: '../images/soccer.jpg'})
 	.addTo(map)
 	.on('click',onClick)
 	.on('mouseover',onMouseOver)
 	.on('mouseout',onMouseOut);
 
-var beach = L.marker([40.56321,-73.883314], {icon: myIcon, title: 'beach', alt: 'fun with seagulls and waves', pic: '/images/beach.jpg'})
+var beach = L.marker([40.56321,-73.883314], {icon: myIcon, title: 'beach', alt: 'fun with seagulls and waves', pic: '../images/beach.jpg'})
 	.addTo(map)
 	.on('click',onClick)
 	.on('mouseover',onMouseOver)
 	.on('mouseout',onMouseOut);
 
-var meetup = L.marker([40.6699957,-73.9702993], {icon: myIcon, title: 'meetup', alt: 'where seymour plays with his fellow frenchies', pic: '/images/meetup.jpg'})
+var meetup = L.marker([40.6699957,-73.9702993], {icon: myIcon, title: 'meetup', alt: 'where seymour plays with his fellow frenchies', pic: '../images/meetup.jpg'})
 	.addTo(map)
 	.on('click',onClick)
 	.on('mouseover',onMouseOver)
 	.on('mouseout',onMouseOut);
 
-var camping = L.marker([40.200983,-74.300908], {icon: myIcon, title: 'camping', alt: 'this is where seymour went camping for the first time', pic: '/images/turkeyswampcamp.jpg'})
+var camping = L.marker([40.200983,-74.300908], {icon: myIcon, title: 'camping', alt: 'this is where seymour went camping for the first time', pic: '../images/turkeyswampcamp.jpg'})
 	.addTo(map)
 	.on('click',onClick)
 	.on('mouseover',onMouseOver)
 	.on('mouseout',onMouseOut);
 
-var fort = L.marker([40.794196,-73.77565], {icon: myIcon, title: 'fort', alt: 'dog-friendly field station where jackie brings seymour to work', pic: '/images/fort2.jpg'})
+var fort = L.marker([40.794196,-73.77565], {icon: myIcon, title: 'fort', alt: 'dog-friendly field station where jackie brings seymour to work', pic: '../images/fort2.jpg'})
 	.addTo(map)
 	.on('click',onClick)
 	.on('mouseover',onMouseOver)
 	.on('mouseout',onMouseOut);
 
-var licH2o = L.marker([40.7430715,-73.9600146], {icon: myIcon, title: 'licH2o', alt: 'a dog run with a view of Manhattan!', pic: '/images/picnictable2.jpg'})
+var licH2o = L.marker([40.7430715,-73.9600146], {icon: myIcon, title: 'licH2o', alt: 'a dog run with a view of Manhattan!', pic: '../images/picnictable2.jpg'})
 	.addTo(map)
 	.on('click',onClick)
 	.on('mouseover',onMouseOver)
