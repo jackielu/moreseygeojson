@@ -22,9 +22,17 @@ header {
 	background: whitesmoke;
 	border-radius: 5px;
 	position: fixed;
-	opacity: .75;
+	opacity: .85;
 	z-index: 1;
 }
+
+#image {
+	height: 200px;
+	background-size: cover;
+	background-position: center; 
+	display: none
+}
+
 
 
 h1 {
@@ -44,6 +52,16 @@ p {
 	border-radius: 5px;
 }
 
+#bottomBar {
+	width: 24%;
+	float: right;
+	position: fixed;
+	bottom: 1%;
+	right: 3%;
+	z-index: 1;
+	font-size: 13px;
+	opacity: 0.9;
+}
 
 #listOfPlaces {
     float: left;
@@ -113,6 +131,7 @@ li {
 	color: #F06216;
 	font-style: italic;
 }
+
 
 
 #map {
