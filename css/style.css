@@ -104,6 +104,14 @@ li {
 
 .jackpot {
 	display: none;
+	color: #0787BC;
+	font-weight: bold;
+}
+
+.tryAgain {
+	display: none;
+	color: #F06216;
+	font-style: italic;
 }
 
 
