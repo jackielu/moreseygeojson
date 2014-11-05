@@ -3,7 +3,7 @@ var isHeThere;
 var mID;
 var picID;
 
-var map = L.map('map').setView([40.7305404,-73.949101], 12); //adds a new map to the page, 'map' refers to the name of your div
+var map = L.map('map',{zoomControl:false}).setView([40.7305404,-73.949101], 12); //adds a new map to the page, 'map' refers to the name of your div
 //you define the variable map so that you can refer to it later
 //setview tells you where to start the map, after the comma comes the zoom level
 
@@ -21,7 +21,8 @@ L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png', {
 	maxZoom: 16
 }).addTo(map);
 
-
+//this adds a new zoom control in the specified position.  requires setting zoomControl:false in L.map
+L.control.zoom({position: "topright"}).addTo(map);
 
 //define the location markers, along with a title, and a function called onClick that runs when you click on the marker
 
