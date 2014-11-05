@@ -75,7 +75,7 @@ var licH2o = L.marker([40.7430715,-73.9600146], {icon: myIcon, title: 'licH2o', 
 
 
 //defines what happens on marker clicks
-function onClick(e) {
+function onClick(e) {  //e is the event
 	//console.log(this.options.pic);
 	//console.log('url('.concat(this.options.pic).concat(')'));
 	var picID = 'url('.concat(this.options.pic).concat(')');
