@@ -1,0 +1,125 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "'bday'",
+        "alt": "'where Seymour was born and his littermates still live'",
+        "pic": "'images/littermates.jpg'"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.50087404251099,
+          41.07707046328225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "mkt",
+        "alt": "a place full of yummy food smells",
+        "pic": "'images/cobble.jpg'"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.95267605781555,
+          40.72018479597592
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "soccer",
+        "alt": "nice grass fields for chasing a ball",
+        "pic": "'images/soccer.jpg'"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.94323468208313,
+          40.7252504864516
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "beach",
+        "alt": "fun with seagulls and waves",
+        "pic": "'images/beach.jpg'"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.88576030731201,
+          40.56032451840591
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "meetup",
+        "alt": "where seymour plays with his fellow frenchies",
+        "pic": "'images/meetup.jpg'"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.970947265625,
+          40.669474137982995
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "camping",
+        "alt": "this is where seymour went camping for the first time",
+        "pic": "'images/turkeyswampcamp.jpg'"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.300908,
+          40.200983
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "fort",
+        "alt": "dog-friendly field station where jackie brings seymour to work",
+        "pic": "'images/fort2.jpg'"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.7756609916687,
+          40.794261545542234
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "licH2o",
+        "alt": "a dog run with a view of Manhattan!",
+        "pic": "'images/picnictable2.jpg'"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.95886659622192,
+          40.744347030105935
+        ]
+      }
+    }
+  ]
+}

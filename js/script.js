@@ -2,6 +2,7 @@ var buttonid;
 var isHeThere;
 var mID;
 var picID;
+var data;
 
 var map = L.map('map',{zoomControl:false}).setView([40.7305404,-73.949101], 12); //adds a new map to the page, 'map' refers to the name of your div
 //you define the variable map so that you can refer to it later
@@ -23,6 +24,20 @@ L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png', {
 
 //this adds a new zoom control in the specified position.  requires setting zoomControl:false in L.map
 L.control.zoom({position: "topright"}).addTo(map);
+
+
+//add data as geojson directly w/out using the library
+// var data = $.getJSON("./data/data.json"), function(data){
+//	console.log(data);
+//}
+
+//get external geoJSON file - this requires the leaflet-AJAX library from Calvin Metcalf
+var geojsonLayer = new L.GeoJSON.AJAX("./data/data.geojson",{onEachFeature:popUp});
+
+//add the geoJSON layer to the map
+geojsonLayer.addTo(map);
+
+
 
 //define the location markers, along with a title, and a function called onClick that runs when you click on the marker
 
