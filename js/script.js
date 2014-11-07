@@ -32,29 +32,30 @@ L.control.zoom({position: "topright"}).addTo(map);
 //}
 
 // define a function for popUps and the JSON property to pull from
-function popUp (feature, layer) {
-	layer.bindPopup (feature.properties.alt);
+function makeMarker (feature, layer) {
+	layer.bindPopup (
+		feature.properties.alt
+		+ "some text"
+		);
+	//to try and grab the click event
+	layer.on("click",function(e){
+		console.log(feature.properties.alt);
+		console.log(e); //this is also where you put the function to select something and apply a CSS (i.e. define a behavior)
+	})
+};
+
+//this function attaches the custom icon to the location
+function putMarker(feature,latlng) {
+	return L.marker(latlng, {icon:myIcon})
 }
 
 
-
-
-//defintes what happens on marker mouseovers - version for geoJSON
-function onMouseOver(feature, layer) {
-	layer.on('mouseover', function() {console.log(feature.properties.title)});
-	var mID = '#'.concat(this.properties.title);  //construct the needed ID selector 
-	console.log(mID);
-	$(mID).toggleClass('hover');
-}
-
-
-
-//get external geoJSON file - this requires the leaflet-AJAX library from Calvin Metcalf
-var geojsonLayer = new L.GeoJSON.AJAX("./data/data.geojson",{onEachFeature:popUp},{onEachFeature:onMouseOver});
-
-//add the geoJSON layer to the map
-geojsonLayer.addTo(map);
-
+$.getJSON('/data/data.geojson', function(data){
+	//console.log(data);
+	L.geoJson(data.features, {
+		onEachFeature: makeMarker, pointToLayer:putMarker
+	}).addTo(map);
+});
 
 
 //HARD CODED LOCATION MARKERS
@@ -108,6 +109,16 @@ geojsonLayer.addTo(map);
 //	.on('mouseover',onMouseOver)
 //	.on('mouseout',onMouseOut);
 //
+
+
+//defines what happens on marker mouseovers - attempte version for geoJSON
+function onMouseOver(feature, layer) {
+	layer.on('mouseover', function() {console.log(feature.properties.title)});
+	var mID = '#'.concat(this.properties.title);  //construct the needed ID selector 
+	console.log(mID);
+	$(mID).toggleClass('hover');
+}
+
 
 //defines what happens on marker clicks
 function onClick(e) {  //e is the event
