@@ -26,20 +26,23 @@ L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png', {
 L.control.zoom({position: "topright"}).addTo(map);
 
 
-//add data as geojson directly w/out using the library
-// var data = $.getJSON("./data/data.json"), function(data){
-//	console.log(data);
-//}
+//load external geoJSON
+$.getJSON('/data/data_v2.geojson', function(data){
+	//console.log(data);
+	var geojsonLayer = L.geoJson(data.features, {
+		onEachFeature: makeMarker, pointToLayer:putMarker
+	}).addTo(map);
+});
+
 
 // define a function for popUps and the JSON property to pull from
 function makeMarker (feature, layer) {
 	layer.bindPopup (
-		feature.properties.alt
-		+ "some text"
+		feature.properties.locDescrp	
 		);
 	//to try and grab the click event
 	layer.on("click",function(e){
-		console.log(feature.properties.alt);
+		console.log(feature.properties.locDescrp);
 		console.log(e); //this is also where you put the function to select something and apply a CSS (i.e. define a behavior)
 	})
 };
@@ -49,13 +52,6 @@ function putMarker(feature,latlng) {
 	return L.marker(latlng, {icon:myIcon})
 }
 
-
-$.getJSON('/data/data.geojson', function(data){
-	//console.log(data);
-	L.geoJson(data.features, {
-		onEachFeature: makeMarker, pointToLayer:putMarker
-	}).addTo(map);
-});
 
 
 //HARD CODED LOCATION MARKERS
