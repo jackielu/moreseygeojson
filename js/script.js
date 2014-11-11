@@ -37,13 +37,16 @@ $.getJSON('/data/data_v2.geojson', function(data){
 
 // define a function for popUps and the JSON property to pull from
 function makeMarker (feature, layer) {
+	var thisFeature = feature.properties;
+
+	//bind a leaflet popup to the marker
 	layer.bindPopup (
-		feature.properties.locDescrp	
+		thisFeature.locDescrp	
 		);
 	//to try and grab the click event
 	layer.on("click",function(e){
-		console.log(feature.properties.locDescrp);
-		console.log(e); //this is also where you put the function to select something and apply a CSS (i.e. define a behavior)
+		console.log(thisFeature.locName);
+//		console.log(e); //this is also where you put the function to select something and apply a CSS (i.e. define a behavior)
 	})
 };
 
@@ -51,61 +54,6 @@ function makeMarker (feature, layer) {
 function putMarker(feature,latlng) {
 	return L.marker(latlng, {icon:myIcon})
 }
-
-
-
-//HARD CODED LOCATION MARKERS
-//define the location markers, along with a title, and a function called onClick that runs when you click on the marker
-//
-//var bday = L.marker([41.077333,-73.501891], {icon: myIcon, title: 'bday', alt: 'where Seymour was born and his littermates still live', pic: 'images/littermates.jpg'})
-//	.addTo(map)
-//	.on('click',onClick)
-//	.on('mouseover',onMouseOver)
-//	.on('mouseout',onMouseOut);
-//
-//var mkt = L.marker([40.720042,-73.952907], {icon: myIcon, title: 'mkt', alt: 'a place full of yummy food smells', pic: 'images/cobble.jpg'})
-//	.addTo(map)
-//	.on('click',onClick)
-//	.on('mouseover',onMouseOver)
-//	.on('mouseout',onMouseOut);
-//
-//var soccer = L.marker([40.724444,-73.943358], {icon: myIcon, title: 'soccer', alt: 'nice grass fields for chasing the ball', pic: 'images/soccer.jpg'})
-//	.addTo(map)
-//	.on('click',onClick)
-//	.on('mouseover',onMouseOver)
-//	.on('mouseout',onMouseOut);
-//
-//var beach = L.marker([40.56321,-73.883314], {icon: myIcon, title: 'beach', alt: 'fun with seagulls and waves', pic: 'images/beach.jpg'})
-//	.addTo(map)
-//	.on('click',onClick)
-//	.on('mouseover',onMouseOver)
-//	.on('mouseout',onMouseOut);
-//
-//var meetup = L.marker([40.6699957,-73.9702993], {icon: myIcon, title: 'meetup', alt: 'where seymour plays with his fellow frenchies', pic: 'images/meetup.jpg'})
-//	.addTo(map)
-//	.on('click',onClick)
-//	.on('mouseover',onMouseOver)
-//	.on('mouseout',onMouseOut);
-//
-//var camping = L.marker([40.200983,-74.300908], {icon: myIcon, title: 'camping', alt: 'this is where seymour went camping for the first time', pic: 'images/turkeyswampcamp.jpg'})
-//	.addTo(map)
-//	.on('click',onClick)
-//	.on('mouseover',onMouseOver)
-//	.on('mouseout',onMouseOut);
-//
-//var fort = L.marker([40.794196,-73.77565], {icon: myIcon, title: 'fort', alt: 'dog-friendly field station where jackie brings seymour to work', pic: 'images/fort2.jpg'})
-//	.addTo(map)
-//	.on('click',onClick)
-//	.on('mouseover',onMouseOver)
-//	.on('mouseout',onMouseOut);
-//
-//var licH2o = L.marker([40.7430715,-73.9600146], {icon: myIcon, title: 'licH2o', alt: 'a dog run with a view of Manhattan!', pic: 'images/picnictable2.jpg'})
-//	.addTo(map)
-//	.on('click',onClick)
-//	.on('mouseover',onMouseOver)
-//	.on('mouseout',onMouseOut);
-//
-
 
 //defines what happens on marker mouseovers - attempte version for geoJSON
 function onMouseOver(feature, layer) {
@@ -156,13 +104,17 @@ function onMouseOut(e) {
 
 //listeners for place button clicks
 $('.place').on('click',function(){
-	// console.log(this);  //what did you click on?
+	console.log(this);  //what did you click on?
     buttonid = $(this).attr("id"); //get the ID value of the element you clicked on
-    // console.log(buttonid);  //print value of buttonid
-    map.panTo(window[buttonid].getLatLng(),{animate: true, duration:3});
-    // console.log(window[buttonid].options.title); //the title of the marker
-    //console.log(window[buttonid].options.alt); //the text for the location
-    window[buttonid].bindPopup(String(window[buttonid].options.alt)).openPopup(); //open a pop-up with description corresponding to the marker
+    console.log(buttonid);  //print value of buttonid
+    geojsonLayer.eachLayer(function(marker)
+    {
+    	if(buttonid == marker.feature.properties.locName) {
+    		console.log(marker._latlng);
+    		map.panTo(marker._latlng);
+    		marker.openPopup();
+    	}
+    })
 });
 
 
